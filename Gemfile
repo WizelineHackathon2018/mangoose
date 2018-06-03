@@ -56,6 +56,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'hunspell'
 
+gem 'slack-ruby-bot'
+gem 'celluloid-io'
+gem 'figaro'
 gem 'activeadmin'
 gem 'devise'
 gem 'pundit'
