@@ -1,22 +1,33 @@
 class HunspellController < ApplicationController
+  skip_before_action :verify_authenticity_token
 
   def index
-    spellcheck"hola bola crayola"
-    spellcheck"hola como estas"
+  end
+
+  def verify_text
+    render json: {
+      invalid_words: spellcheck(params[:text])
+    }
   end
 
   private
 
   def spellcheck(text)
+    invalid_words = []
 
-    # TODO: add dinamic dictionaries
-    aff_path = Rails.root + 'lib/dictionaries/index.aff'
-    dic_path = Rails.root + 'lib/dictionaries/index.dic'
+    text.gsub(/[^[:word:]\s]/, '').split.map do |word|
+      if $sp1.spellcheck word
+        puts "#{word} valido en base"
+      else
+        if $sp2.spellcheck(word) && $sp3.spellcheck(word)
+          puts "#{word} valido"
+        else
+          invalid_words.push word
+        end
 
-    sp = Hunspell.new(aff_path.to_s, dic_path.to_s)
-
-    text.split.map do |word|
-      puts "es #{word} valido? #{sp.spellcheck(word)}"
+      end
     end
+
+    invalid_words
   end
 end
