@@ -1,10 +1,16 @@
 ActiveAdmin.register Team do
 
-  before_save do |admin_user|
+  after_save do |team|
 
-    if admin_user.role.empty?
-      admin_user.role = 'agency'
+    if team.profiles.count > 0
+      puts "holis tengo #{team.profiles.count} profiles"
+    else
+
+
+      team.profiles.create(Profile)
+      puts "holis no tengo profiles"
     end
+
   end
 
   includes :users, :profiles
