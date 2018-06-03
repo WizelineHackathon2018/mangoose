@@ -47,6 +47,7 @@ GEM
     ffi (1.9.24)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    hunspell (1.0.0)
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
     listen (3.1.5)
@@ -123,6 +124,7 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
+  hunspell
   listen (>= 3.0.5, < 3.2)
   puma (~> 3.7)
   rails (~> 5.1.6)
@@ -131,5 +133,8 @@ DEPENDENCIES
   sqlite3
   tzinfo-data
 
+RUBY VERSION
+   ruby 2.5.1p57
+
 BUNDLED WITH
-   1.16.0
+   1.16.1
