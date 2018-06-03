@@ -12,7 +12,7 @@ class HunspellController < ApplicationController
 
   private
 
-  def spellcheck(text)
+  def self.spellcheck(text)
     invalid_words = []
 
     text.gsub(/[^[:word:]\s]/, '').split.map do |word|

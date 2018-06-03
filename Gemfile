@@ -58,3 +58,4 @@ gem 'hunspell'
 
 gem 'slack-ruby-bot'
 gem 'celluloid-io'
+gem 'figaro'

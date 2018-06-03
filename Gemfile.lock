@@ -90,6 +90,8 @@ GEM
     faraday_middleware (0.12.2)
       faraday (>= 0.7.4, < 1.0)
     ffi (1.9.24)
+    figaro (1.1.1)
+      thor (~> 0.14)
     gli (2.17.1)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
@@ -221,6 +223,7 @@ DEPENDENCIES
   capybara (~> 2.13)
   celluloid-io
   coffee-rails (~> 4.2)
+  figaro
   hunspell
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
