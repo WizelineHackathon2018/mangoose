@@ -15,7 +15,7 @@ class Bot < SlackRubyBot::Bot
 
       unless words_added < 1
         client.web_client.chat_postEphemeral({
-          text: 'Your message might not be pretty and clear for all members of this channel. These are the terms I think they might have hard time understanding:',
+          text: 'Some members of this channel might not understand some terms:',
           attachments: [
             {
               text: not_in_dic_words_as_text,
